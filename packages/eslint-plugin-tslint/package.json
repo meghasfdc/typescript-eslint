@@ -28,11 +28,14 @@
     "format": "prettier --write \"./**/*.{ts,js,json,md}\" --ignore-path ../../.prettierignore",
     "lint": "eslint . --ext .js,.ts --ignore-path='../../.eslintignore'",
     "test": "jest --coverage",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@typescript-eslint/experimental-utils": "2.26.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "snyk": "^1.316.1"
   },
   "peerDependencies": {
     "eslint": "^5.0.0 || ^6.0.0",
@@ -42,5 +45,6 @@
   "devDependencies": {
     "@types/lodash": "^4.14.149",
     "@typescript-eslint/parser": "2.26.0"
-  }
+  },
+  "snyk": true
 }
