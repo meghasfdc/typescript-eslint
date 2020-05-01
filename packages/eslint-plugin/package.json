@@ -38,13 +38,16 @@
     "generate:rules-lists": "../../node_modules/.bin/ts-node --files --transpile-only tools/generate-rules-lists.ts",
     "lint": "eslint . --ext .js,.ts --ignore-path ../../.eslintignore",
     "test": "jest --coverage",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@typescript-eslint/experimental-utils": "2.26.0",
     "functional-red-black-tree": "^1.0.1",
     "regexpp": "^3.0.0",
-    "tsutils": "^3.17.1"
+    "tsutils": "^3.17.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@types/json-schema": "^7.0.3",
@@ -67,5 +70,6 @@
   "funding": {
     "type": "opencollective",
     "url": "https://opencollective.com/typescript-eslint"
-  }
+  },
+  "snyk": true
 }
