@@ -36,7 +36,9 @@
     "format": "prettier --write \"./**/*.{ts,js,json,md}\" --ignore-path ../../.prettierignore",
     "lint": "eslint . --ext .js,.ts --ignore-path='../../.eslintignore'",
     "test": "jest --coverage",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "debug": "^4.1.1",
@@ -45,7 +47,8 @@
     "is-glob": "^4.0.1",
     "lodash": "^4.17.15",
     "semver": "^6.3.0",
-    "tsutils": "^3.17.1"
+    "tsutils": "^3.17.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@babel/code-frame": "^7.8.3",
@@ -70,5 +73,6 @@
   "funding": {
     "type": "opencollective",
     "url": "https://opencollective.com/typescript-eslint"
-  }
+  },
+  "snyk": true
 }
